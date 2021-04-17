@@ -9,8 +9,7 @@ function splitParams(input) {
 	}
 	let args = input.split(' ')
 	console.log("input: "+input)
-	console.log("args: ",args)
-	console.log("prefix: ",config.prefix)
+	console.log("-- params: ",result)
 	if (input.startsWith(config.prefix)) {
 		result.hasPrefix = true
 		let prefixLen = config.prefix.length
@@ -18,8 +17,6 @@ function splitParams(input) {
 		result.cmd = args[0]
 		result.args = args.slice(1)
 	}
-	console.log("-- params: ")
-	console.log(result)
 	return result
 };
 

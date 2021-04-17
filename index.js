@@ -39,6 +39,7 @@ client.on('message', msg => { // on can trigger multiple times
 	  	msg.reply('C: `'+args[0]+'` F: `'+result.value+'`')
 	  }
 	}
+	console.log("*** message sent FIN")
 });
 
 // login to Discord with your app's token
