@@ -5,6 +5,7 @@ function splitParams(input) {
 	let result = {
 		hasPrefix: false,
 		args: [],
+		argsAsString: '',
 		cmd: ''
 	}
 	let args = input.split(' ')
@@ -16,6 +17,7 @@ function splitParams(input) {
 		args[0] = args[0].substr(prefixLen)
 		result.cmd = args[0]
 		result.args = args.slice(1)
+		result.argsAsString = result.args.join(' ')
 	}
 	return result
 };

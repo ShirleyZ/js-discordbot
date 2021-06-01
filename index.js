@@ -10,6 +10,7 @@ const Util = require('./utils/util.js')
 
 // Features
 const MiscFt = require('./features/misc.js')
+const TrackanyFt = require('./features/trackany.js')
 
 // Globals
 const prefix = config.prefix
@@ -37,6 +38,14 @@ client.on('message', msg => { // on can trigger multiple times
 	  }	else if (cmd === 'ctof') {
 	  	const result = MiscFt.ctof(params.args)
 	  	msg.reply('C: `'+args[0]+'` F: `'+result.value+'`')
+	  } else if (cmd === 'trk') {
+	  	console.log("=== params ===")
+	  	console.log(params)
+	  	const result = TrackanyFt.trackEntry(params.argsAsString)
+	  	console.log("=== trk")
+	  	console.log(result)
+	  	// Call handler function
+	  	// Send reply
 	  }
 	}
 	console.log("*** message sent FIN")
