@@ -38,6 +38,9 @@ client.on('message', msg => { // on can trigger multiple times
 	  }	else if (cmd === 'ctof') {
 	  	const result = MiscFt.ctof(params.args)
 	  	msg.reply('C: `'+args[0]+'` F: `'+result.value+'`')
+	  } else if (cmd === 'tz') {
+	  	// Call the timezone function
+	  	// Return the result
 	  } else if (cmd === 'trk') {
 	  	console.log("=== params ===")
 	  	console.log(params)
