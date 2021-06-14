@@ -11,6 +11,7 @@ const Util = require('./utils/util.js')
 // Features
 const MiscFt = require('./features/misc.js')
 const TrackanyFt = require('./features/trackany.js')
+const TimezoneFt = require('./features/timezones.js')
 
 // Globals
 const prefix = config.prefix
@@ -23,6 +24,7 @@ client.once('ready', () => { // once triggers once once
 client.on('message', msg => { // on can trigger multiple times
 	console.log("*** message received (000)")
 	// console.log(msg)
+	// TODO : Sanitise inputs
 	const params = Util.splitParams(msg.content)
 	const cmd = params.cmd
 	const speaker = msg.author
@@ -40,6 +42,8 @@ client.on('message', msg => { // on can trigger multiple times
 	  	msg.reply('C: `'+args[0]+'` F: `'+result.value+'`')
 	  } else if (cmd === 'tz') {
 	  	// Call the timezone function
+	  	let result = TimezoneFt.convertTime(params.args)
+	  	// msg.reply("Timezone")
 	  	// Return the result
 	  } else if (cmd === 'trk') {
 	  	console.log("=== params ===")
