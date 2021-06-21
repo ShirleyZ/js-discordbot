@@ -42,9 +42,8 @@ client.on('message', msg => { // on can trigger multiple times
 	  	msg.reply('C: `'+args[0]+'` F: `'+result.value+'`')
 	  } else if (cmd === 'tz') {
 	  	// Call the timezone function
-	  	let result = TimezoneFt.convertTime(params.args)
-	  	// msg.reply("Timezone")
-	  	// Return the result
+	  	let result = TimezoneFt.handleConvertTime(params.args)
+	  	msg.reply(result.msg)
 	  } else if (cmd === 'trk') {
 	  	console.log("=== params ===")
 	  	console.log(params)
